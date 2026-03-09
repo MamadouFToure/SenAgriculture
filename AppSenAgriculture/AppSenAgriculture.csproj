@@ -82,7 +82,9 @@
     <Reference Include="MySql.Data.EntityFramework, Version=9.5.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.EntityFramework.9.5.0\lib\net48\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -175,6 +177,18 @@
     </Compile>
     <Compile Include="Views\Account\frmClient.Designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commande\frmDetailsCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commande\frmDetailsCommande.Designer.cs">
+      <DependentUpon>frmDetailsCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commande\frmCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commande\frmCommande.Designer.cs">
+      <DependentUpon>frmCommande.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Parametre\frmCategorie.cs">
       <SubType>Form</SubType>
