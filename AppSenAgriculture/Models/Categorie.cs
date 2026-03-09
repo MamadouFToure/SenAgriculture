@@ -9,7 +9,7 @@ namespace AppSenAgriculture.Models
 {
     public class Categorie
     {
-        [Key]
+        [Key] public int Id { get; set; }
         public int IdCategorie { get; set; }
 
         [Required, MaxLength(100)]
