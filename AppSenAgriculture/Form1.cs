@@ -32,41 +32,53 @@ namespace AppSenAgriculture
 
         private void frmConnexion_Load(object sender, EventArgs e)
         {
-
+            Utils.WriteFileError("teste des erreurs");
         }
 
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            BdSenAgricultureContext db = new BdSenAgricultureContext();
-            var leUser =db.Utilisateurs.Where(a=>a.IdentifiantUtilisateur.ToLower() ==txtIdentifiant.Text.ToLower()).FirstOrDefault();
-            if (leUser != null) {
-
-                using (MD5 md5Hash = MD5.Create())
+            try
+            {
+                BdSenAgricultureContext db = new BdSenAgricultureContext();
+                var leUser = db.Utilisateurs.Where(a => a.IdentifiantUtilisateur.ToLower() == txtIdentifiant.Text.ToLower()).FirstOrDefault();
+                if (leUser != null)
                 {
-                    if (Crypto.VerifyMd5Hash(md5Hash, txtMotDePasse.Text, leUser.MotDePasseUtilisateur))
+
+                    using (MD5 md5Hash = MD5.Create())
                     {
-                        frmMDI f = new frmMDI();
-                        //if (db.Admins.Find(leUser.IdUtilisateur) != null)
-                        if(db.Admins.Where(a =>a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
+                        if (Crypto.VerifyMd5Hash(md5Hash, txtMotDePasse.Text, leUser.MotDePasseUtilisateur))
                         {
-                            f.profil = "Admin";
-                        } else if (db.Clients.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
-                        {
-                            f.profil = "Client";
+                            frmMDI f = new frmMDI();
+                            //if (db.Admins.Find(leUser.IdUtilisateur) != null)
+                            if (db.Admins.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
+                            {
+                                f.profil = "Admin";
+                            }
+                            else if (db.Clients.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
+                            {
+                                f.profil = "Client";
+                            }
+                            f.Show();
+                            this.Hide();
                         }
-                        f.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Identifiant ou Mot de pass incorrect");
+                        else
+                        {
+                            MessageBox.Show("Identifiant ou Mot de pass incorrect");
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Identifiant ou Mot de pass incorrect");
+                }  
+
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Identifiant ou Mot de pass incorrect");
+                Utils.WriteLogSystem(ex.ToString(), "Form1-btnSeConnecter_Click");
+
             }
+            
 
         }
 

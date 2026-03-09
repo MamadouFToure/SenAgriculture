@@ -46,9 +46,12 @@ namespace AppSenAgriculture.Models
 
         public DbSet<Stock>   Stocks { get; set; }
 
+        public DbSet<Td_Erreur> td_Erreurs { get; set; }
 
 
-
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

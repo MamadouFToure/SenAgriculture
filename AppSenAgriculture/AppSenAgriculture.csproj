@@ -139,6 +139,9 @@
     </Compile>
     <Compile Include="Helper\Crypto.cs" />
     <Compile Include="Helper\FillList.cs" />
+    <Compile Include="Helper\GMailer.cs" />
+    <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Models\Td_Erreur.cs" />
     <Compile Include="Security\PasswordSecurity.cs" />
     <Compile Include="Migrations\202603081751493_InitialCreate.cs" />
     <Compile Include="Migrations\202603081751493_InitialCreate.Designer.cs">
@@ -246,6 +249,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Error\erreur.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
