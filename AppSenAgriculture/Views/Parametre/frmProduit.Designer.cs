@@ -70,7 +70,7 @@
             // txtLibelle
             // 
             this.txtLibelle.Location = new System.Drawing.Point(18, 32);
-            this.txtLibelle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLibelle.Margin = new System.Windows.Forms.Padding(2);
             this.txtLibelle.Name = "txtLibelle";
             this.txtLibelle.Size = new System.Drawing.Size(265, 20);
             this.txtLibelle.TabIndex = 1;
@@ -78,7 +78,7 @@
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(18, 90);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(265, 20);
             this.txtDescription.TabIndex = 3;
@@ -96,7 +96,7 @@
             // txtPrixUMin
             // 
             this.txtPrixUMin.Location = new System.Drawing.Point(18, 148);
-            this.txtPrixUMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrixUMin.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrixUMin.Name = "txtPrixUMin";
             this.txtPrixUMin.Size = new System.Drawing.Size(265, 20);
             this.txtPrixUMin.TabIndex = 5;
@@ -114,7 +114,7 @@
             // txtPrixUMax
             // 
             this.txtPrixUMax.Location = new System.Drawing.Point(18, 206);
-            this.txtPrixUMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrixUMax.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrixUMax.Name = "txtPrixUMax";
             this.txtPrixUMax.Size = new System.Drawing.Size(265, 20);
             this.txtPrixUMax.TabIndex = 7;
@@ -153,7 +153,7 @@
             // 
             this.cbbUniteMesure.FormattingEnabled = true;
             this.cbbUniteMesure.Location = new System.Drawing.Point(18, 262);
-            this.cbbUniteMesure.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbUniteMesure.Margin = new System.Windows.Forms.Padding(2);
             this.cbbUniteMesure.Name = "cbbUniteMesure";
             this.cbbUniteMesure.Size = new System.Drawing.Size(265, 21);
             this.cbbUniteMesure.TabIndex = 12;
@@ -162,7 +162,7 @@
             // 
             this.cbbCategorie.FormattingEnabled = true;
             this.cbbCategorie.Location = new System.Drawing.Point(18, 320);
-            this.cbbCategorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbCategorie.Margin = new System.Windows.Forms.Padding(2);
             this.cbbCategorie.Name = "cbbCategorie";
             this.cbbCategorie.Size = new System.Drawing.Size(265, 21);
             this.cbbCategorie.TabIndex = 13;
@@ -170,7 +170,7 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Location = new System.Drawing.Point(205, 432);
-            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(77, 21);
             this.btnSupprimer.TabIndex = 16;
@@ -181,7 +181,7 @@
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(205, 365);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(77, 21);
             this.btnAjouter.TabIndex = 15;
@@ -192,7 +192,7 @@
             // btnModifier
             // 
             this.btnModifier.Location = new System.Drawing.Point(205, 399);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(77, 21);
             this.btnModifier.TabIndex = 14;
@@ -203,7 +203,7 @@
             // btnSelectionner
             // 
             this.btnSelectionner.Location = new System.Drawing.Point(205, 3);
-            this.btnSelectionner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectionner.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectionner.Name = "btnSelectionner";
             this.btnSelectionner.Size = new System.Drawing.Size(77, 25);
             this.btnSelectionner.TabIndex = 17;
@@ -215,7 +215,7 @@
             // 
             this.dgProduit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProduit.Location = new System.Drawing.Point(322, 89);
-            this.dgProduit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgProduit.Margin = new System.Windows.Forms.Padding(2);
             this.dgProduit.Name = "dgProduit";
             this.dgProduit.RowHeadersWidth = 51;
             this.dgProduit.RowTemplate.Height = 24;
@@ -233,9 +233,9 @@
             this.groupBox1.Controls.Add(this.txtRLibelle);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(322, 3);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(797, 72);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
@@ -244,7 +244,7 @@
             // btnRechercher
             // 
             this.btnRechercher.Location = new System.Drawing.Point(684, 26);
-            this.btnRechercher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRechercher.Margin = new System.Windows.Forms.Padding(2);
             this.btnRechercher.Name = "btnRechercher";
             this.btnRechercher.Size = new System.Drawing.Size(77, 25);
             this.btnRechercher.TabIndex = 20;
@@ -255,7 +255,7 @@
             // txtRPrixUMin
             // 
             this.txtRPrixUMin.Location = new System.Drawing.Point(476, 29);
-            this.txtRPrixUMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRPrixUMin.Margin = new System.Windows.Forms.Padding(2);
             this.txtRPrixUMin.Name = "txtRPrixUMin";
             this.txtRPrixUMin.Size = new System.Drawing.Size(170, 20);
             this.txtRPrixUMin.TabIndex = 21;
@@ -263,7 +263,7 @@
             // txtRDescription
             // 
             this.txtRDescription.Location = new System.Drawing.Point(268, 29);
-            this.txtRDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtRDescription.Name = "txtRDescription";
             this.txtRDescription.Size = new System.Drawing.Size(170, 20);
             this.txtRDescription.TabIndex = 21;
@@ -291,7 +291,7 @@
             // txtRLibelle
             // 
             this.txtRLibelle.Location = new System.Drawing.Point(62, 29);
-            this.txtRLibelle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRLibelle.Margin = new System.Windows.Forms.Padding(2);
             this.txtRLibelle.Name = "txtRLibelle";
             this.txtRLibelle.Size = new System.Drawing.Size(170, 20);
             this.txtRLibelle.TabIndex = 21;
@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 474);
+            this.ClientSize = new System.Drawing.Size(1125, 474);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgProduit);
@@ -330,7 +330,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmProduit";
             this.Text = "Produit";
             this.Load += new System.EventHandler(this.frmProduit_Load);
