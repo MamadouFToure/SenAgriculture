@@ -34,6 +34,8 @@ namespace AppSenAgriculture.Models
         //un produit appartient a une categorie : propriete de navigation
         public virtual Categorie Categorie { get; set; }
 
-        
+        public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
+
+
     }
 }

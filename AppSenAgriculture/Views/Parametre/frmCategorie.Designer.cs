@@ -43,51 +43,57 @@
             // DgCaterogie
             // 
             this.DgCaterogie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgCaterogie.Location = new System.Drawing.Point(425, 49);
+            this.DgCaterogie.Location = new System.Drawing.Point(283, 32);
+            this.DgCaterogie.Margin = new System.Windows.Forms.Padding(2);
             this.DgCaterogie.Name = "DgCaterogie";
             this.DgCaterogie.RowHeadersWidth = 62;
             this.DgCaterogie.RowTemplate.Height = 28;
-            this.DgCaterogie.Size = new System.Drawing.Size(789, 671);
+            this.DgCaterogie.Size = new System.Drawing.Size(583, 436);
             this.DgCaterogie.TabIndex = 0;
             // 
             // Libelle
             // 
             this.Libelle.AutoSize = true;
-            this.Libelle.Location = new System.Drawing.Point(40, 68);
+            this.Libelle.Location = new System.Drawing.Point(27, 44);
+            this.Libelle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Libelle.Name = "Libelle";
-            this.Libelle.Size = new System.Drawing.Size(54, 20);
+            this.Libelle.Size = new System.Drawing.Size(37, 13);
             this.Libelle.TabIndex = 1;
             this.Libelle.Text = "Libelle";
             // 
             // txtLibelle
             // 
-            this.txtLibelle.Location = new System.Drawing.Point(44, 100);
+            this.txtLibelle.Location = new System.Drawing.Point(29, 65);
+            this.txtLibelle.Margin = new System.Windows.Forms.Padding(2);
             this.txtLibelle.Name = "txtLibelle";
-            this.txtLibelle.Size = new System.Drawing.Size(348, 26);
+            this.txtLibelle.Size = new System.Drawing.Size(233, 20);
             this.txtLibelle.TabIndex = 2;
             // 
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(40, 172);
+            this.Description.Location = new System.Drawing.Point(27, 112);
+            this.Description.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(89, 20);
+            this.Description.Size = new System.Drawing.Size(60, 13);
             this.Description.TabIndex = 3;
             this.Description.Text = "Description";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(44, 204);
+            this.txtDescription.Location = new System.Drawing.Point(29, 133);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(348, 157);
+            this.txtDescription.Size = new System.Drawing.Size(233, 103);
             this.txtDescription.TabIndex = 4;
             // 
             // btnSelectionner
             // 
-            this.btnSelectionner.Location = new System.Drawing.Point(276, 40);
+            this.btnSelectionner.Location = new System.Drawing.Point(184, 26);
+            this.btnSelectionner.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(116, 39);
+            this.btnSelectionner.Size = new System.Drawing.Size(77, 25);
             this.btnSelectionner.TabIndex = 5;
             this.btnSelectionner.Text = "&Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = true;
@@ -95,9 +101,10 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(276, 452);
+            this.btnModifier.Location = new System.Drawing.Point(184, 294);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(116, 32);
+            this.btnModifier.Size = new System.Drawing.Size(77, 21);
             this.btnModifier.TabIndex = 6;
             this.btnModifier.Text = "&Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -105,9 +112,10 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(276, 400);
+            this.btnAjouter.Location = new System.Drawing.Point(184, 260);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(116, 32);
+            this.btnAjouter.Size = new System.Drawing.Size(77, 21);
             this.btnAjouter.TabIndex = 7;
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -115,9 +123,10 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(276, 504);
+            this.btnSupprimer.Location = new System.Drawing.Point(184, 328);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(116, 32);
+            this.btnSupprimer.Size = new System.Drawing.Size(77, 21);
             this.btnSupprimer.TabIndex = 8;
             this.btnSupprimer.Text = "S&upprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -125,9 +134,9 @@
             // 
             // frmCategorie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 732);
+            this.ClientSize = new System.Drawing.Size(877, 476);
             this.ControlBox = false;
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnAjouter);
@@ -138,6 +147,7 @@
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.Libelle);
             this.Controls.Add(this.DgCaterogie);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCategorie";
             this.Text = " Categorie";
             this.Load += new System.EventHandler(this.frmCategorie_Load);

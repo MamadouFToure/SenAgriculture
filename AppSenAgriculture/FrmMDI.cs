@@ -1,4 +1,5 @@
-﻿using AppSenAgriculture.Views.Parametre;
+﻿using AppSenAgriculture.Views.Account;
+using AppSenAgriculture.Views.Parametre;
 using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections;
@@ -15,6 +16,7 @@ namespace AppSenAgriculture
 {
     public partial class frmMDI : Form
     {
+        public string profil;
         public frmMDI()
         {
             InitializeComponent();
@@ -37,11 +39,21 @@ namespace AppSenAgriculture
         }
 
 
+        /// <summary>
+        /// Quitter l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// se deconnecter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void seDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConnexion f = new frmConnexion();
@@ -58,7 +70,7 @@ namespace AppSenAgriculture
             f.WindowState = FormWindowState.Maximized;
 
         }
-
+           
         private void categorieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
@@ -75,6 +87,27 @@ namespace AppSenAgriculture
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
+
+            if(profil == "Admin")
+            {
+                parametreToolStripMenuItem.Visible = false;
+                securiteToolStripMenuItem.Visible = true;
+            }else if(profil == "Client")
+            {
+                parametreToolStripMenuItem.Visible = true;
+                securiteToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void clientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            fermer();
+            frmClient f = new frmClient();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+
         }
     }
 }

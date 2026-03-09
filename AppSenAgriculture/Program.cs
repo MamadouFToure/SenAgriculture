@@ -1,6 +1,9 @@
-﻿using System;
+﻿using AppSenAgriculture.Helper;
+using AppSenAgriculture.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,9 +17,35 @@ namespace AppSenAgriculture
         [STAThread]
         static void Main()
         {
+            CreateAdmin();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmConnexion());
+        }
+        /// <summary>
+        /// Creation du Super Admin
+        /// </summary>
+
+        private static void CreateAdmin()
+        {
+            BdSenAgricultureContext db = new BdSenAgricultureContext();
+            var leAdmin = db.Admins.ToList();
+            if (leAdmin.Count == 0)
+            {
+                Admin a = new Admin();
+                a.IdentifiantUtilisateur = "Admin";
+                a.AdresseUtilisateur = "Admin";
+                a.EmailUtilisateur = "Admin@gmail.com";
+                a.TelUtilisateur = "771234567";
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    a.MotDePasseUtilisateur = Crypto.GetMd5Hash(md5Hash, "P@sser123");
+                }
+                a.NomCompletUtilisateur = "Admin";
+                db.Admins.Add(a);
+                db.SaveChanges();
+            }
+                    
         }
     }
 }

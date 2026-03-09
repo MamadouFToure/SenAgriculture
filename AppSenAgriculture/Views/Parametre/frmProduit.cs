@@ -31,7 +31,7 @@ namespace AppSenAgriculture.Views.Parametre
             cbbCategorie.DisplayMember = "Text";
             cbbCategorie.ValueMember = "Value";
 
-            dgProduit.DataSource = db.Produit.Select(u => new
+            dgProduit.DataSource = db.Produits.Select(u => new
             {
                 u.IdProduit,
                 u.LibelleProduit,
@@ -65,7 +65,7 @@ namespace AppSenAgriculture.Views.Parametre
             p.DescriptionProduit = txtDescription.Text;
             p.PrixUnuitaireMin = double.Parse(txtPrixUMin.Text);
             p.PrixUnuitaireMax = double.Parse(txtPrixUMax.Text);
-            db.Produit.Add(p);
+            db.Produits.Add(p);
             db.SaveChanges();
             ResetForm();
         }
@@ -73,7 +73,7 @@ namespace AppSenAgriculture.Views.Parametre
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
             int? id = int.Parse(dgProduit.CurrentRow.Cells[0].Value.ToString());
-            var p = db.Produit.Find(id);
+            var p = db.Produits.Find(id);
             txtDescription.Text = p.DescriptionProduit;
             txtLibelle.Text = p.LibelleProduit;
             txtPrixUMax.Text = p.PrixUnuitaireMax.ToString();
@@ -85,7 +85,7 @@ namespace AppSenAgriculture.Views.Parametre
         private void btnModifier_Click(object sender, EventArgs e)
         {
             int? id = int.Parse(dgProduit.CurrentRow.Cells[0].Value.ToString());
-            var p = db.Produit.Find(id);
+            var p = db.Produits.Find(id);
             p.IdUniteMesure = int.Parse(cbbUniteMesure.SelectedValue.ToString());
             p.CategorieId = int.Parse(cbbCategorie.SelectedValue.ToString());
             p.LibelleProduit = txtLibelle.Text;
@@ -99,15 +99,15 @@ namespace AppSenAgriculture.Views.Parametre
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             int? id = int.Parse(dgProduit.CurrentRow.Cells[0].Value.ToString());
-            var p = db.Produit.Find(id);
-            db.Produit.Remove(p);
+            var p = db.Produits.Find(id);
+            db.Produits.Remove(p);
             db.SaveChanges();
             ResetForm();
         }
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {
-            var liste = db.Produit.ToList();
+            var liste = db.Produits.ToList();
 
             if(!string.IsNullOrEmpty(txtRLibelle.Text))
             {

@@ -14,16 +14,40 @@ namespace AppSenAgriculture.Models
     {
         public BdSenAgricultureContext():base("conSenAgriculture")
         {
+          
 
         }
                                        
         public DbSet<Categorie> Categories { get; set; }
+
         public DbSet<UniteMesure> UnitesMesures { get; set; }
-        public DbSet<Produit> Produit { get; set; }
+
+        public DbSet<Produit> Produits { get; set; }
+
         public DbSet<Utilisateur> Utilisateurs { get; set; }
+
         public DbSet<Cultivateur> Cultivateurs { get; set; }
+
         public DbSet<Facilitateur> Facilitateurs { get; set; }
+
         public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
+
+        public DbSet<Commande> Commandes { get; set; }
+
+        public DbSet<DetailsCommande> DetailCommandes { get; set; }
+
+        public DbSet<Facture> Factures { get; set; }
+
+        public DbSet<Region> Regions { get; set; }
+
+        public DbSet<Departement> Departements { get; set; }
+
+        public DbSet<Stock>   Stocks { get; set; }
+
+
+
 
 
     }

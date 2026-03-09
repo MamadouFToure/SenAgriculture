@@ -66,11 +66,12 @@
             // txtMotDePasse
             // 
             this.txtMotDePasse.Location = new System.Drawing.Point(97, 203);
-            this.txtMotDePasse.Multiline = true;
+            this.txtMotDePasse.Multiline = false;
             this.txtMotDePasse.Name = "txtMotDePasse";
             this.txtMotDePasse.Size = new System.Drawing.Size(526, 42);
             this.txtMotDePasse.TabIndex = 2;
             this.txtMotDePasse.UseSystemPasswordChar = true;
+            this.txtMotDePasse.PasswordChar = '●';
             // 
             // btnSeConnecter
             // 
