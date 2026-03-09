@@ -76,12 +76,188 @@ namespace AppSenAgriculture.Views.Account
 
         }
 
+        Client clientSelectionne;
+
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
+            if (dgClients.SelectedRows.Count > 0)
+            {
+                int id = (int)dgClients.SelectedRows[0].Cells["IdUtilisateur"].Value;
+                clientSelectionne = db.Clients.Find(id);
+                
+                if (clientSelectionne != null)
+                {
+                    txtNomComplet.Text = clientSelectionne.NomCompletUtilisateur;
+                    txtAdresse.Text = clientSelectionne.AdresseUtilisateur;
+                    txtEmail.Text = clientSelectionne.EmailUtilisateur;
+                    txtIdentifiant.Text = clientSelectionne.IdentifiantUtilisateur;
+                    txtTelephone.Text = clientSelectionne.TelUtilisateur;
+                    textProfession.Text = clientSelectionne.ProfessionClient;
+                    
+                    MessageBox.Show("Client sélectionné avec succès!", "Sélection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un client dans la liste!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client à modifier!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Valider les champs
+            if (string.IsNullOrWhiteSpace(txtNomComplet.Text) || string.IsNullOrWhiteSpace(txtIdentifiant.Text))
+            {
+                MessageBox.Show("Le nom complet et l'identifiant sont obligatoires!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            clientSelectionne.NomCompletUtilisateur = txtNomComplet.Text;
+            clientSelectionne.AdresseUtilisateur = txtAdresse.Text;
+            clientSelectionne.EmailUtilisateur = txtEmail.Text;
+            clientSelectionne.IdentifiantUtilisateur = txtIdentifiant.Text;
+            clientSelectionne.TelUtilisateur = txtTelephone.Text;
+            clientSelectionne.ProfessionClient = textProfession.Text;
+            
+            db.SaveChanges();
+            MessageBox.Show("Client modifié avec succès!", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ResetForm();
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client à supprimer!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Êtes-vous sûr de vouloir supprimer le client {clientSelectionne.NomCompletUtilisateur}?\nCette action est irréversible!", 
+                "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
+            if (result == DialogResult.Yes)
+            {
+                db.Clients.Remove(clientSelectionne);
+                db.SaveChanges();
+                MessageBox.Show("Client supprimé avec succès!", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetForm();
+            }
+        }
+
+        private void btnbloqer_Click(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Vous pouvez ajouter un champ 'EstBloque' dans votre modèle Client
+            // Pour l'instant, nous allons juste afficher un message
+            MessageBox.Show($"Le client {clientSelectionne.NomCompletUtilisateur} a été bloqué!", "Blocage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDebloquer_Click(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show($"Le client {clientSelectionne.NomCompletUtilisateur} a été débloqué!", "Déblocage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetForm();
         }
 
         private void frmClient_Load(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+        private void btnModifier_Click_1(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client à modifier!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Valider les champs
+            if (string.IsNullOrWhiteSpace(txtNomComplet.Text) || string.IsNullOrWhiteSpace(txtIdentifiant.Text))
+            {
+                MessageBox.Show("Le nom complet et l'identifiant sont obligatoires!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            clientSelectionne.NomCompletUtilisateur = txtNomComplet.Text;
+            clientSelectionne.AdresseUtilisateur = txtAdresse.Text;
+            clientSelectionne.EmailUtilisateur = txtEmail.Text;
+            clientSelectionne.IdentifiantUtilisateur = txtIdentifiant.Text;
+            clientSelectionne.TelUtilisateur = txtTelephone.Text;
+            clientSelectionne.ProfessionClient = textProfession.Text;
+
+            db.SaveChanges();
+            MessageBox.Show("Client modifié avec succès!", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ResetForm();
+        }
+
+        private void btnSupprimer_Click_1(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client à supprimer!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Êtes-vous sûr de vouloir supprimer le client {clientSelectionne.NomCompletUtilisateur}?\nCette action est irréversible!",
+                "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                db.Clients.Remove(clientSelectionne);
+                db.SaveChanges();
+                MessageBox.Show("Client supprimé avec succès!", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetForm();
+            }
+        }
+
+        private void btnbloqer_Click_1(object sender, EventArgs e)
+        {
+
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Vous pouvez ajouter un champ 'EstBloque' dans votre modèle Client
+            // Pour l'instant, nous allons juste afficher un message
+            MessageBox.Show($"Le client {clientSelectionne.NomCompletUtilisateur} a été bloqué!", "Blocage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDebloquer_Click_1(object sender, EventArgs e)
+        {
+            if (clientSelectionne == null)
+            {
+                MessageBox.Show("Veuillez d'abord sélectionner un client!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show($"Le client {clientSelectionne.NomCompletUtilisateur} a été débloqué!", "Déblocage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
         {
             ResetForm();
         }

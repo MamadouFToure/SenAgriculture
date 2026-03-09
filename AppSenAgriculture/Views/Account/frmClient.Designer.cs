@@ -148,7 +148,7 @@
             this.dgClients.ReadOnly = true;
             this.dgClients.RowHeadersWidth = 62;
             this.dgClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgClients.Size = new System.Drawing.Size(524, 492);
+            this.dgClients.Size = new System.Drawing.Size(541, 492);
             this.dgClients.TabIndex = 20;
             // 
             // btnSelectionner
@@ -169,6 +169,7 @@
             this.btnSupprimer.TabIndex = 24;
             this.btnSupprimer.Text = "&Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click_1);
             // 
             // btnModifier
             // 
@@ -178,6 +179,7 @@
             this.btnModifier.TabIndex = 23;
             this.btnModifier.Text = "&Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click_1);
             // 
             // btnAjouter
             // 
@@ -214,6 +216,7 @@
             this.btnbloqer.TabIndex = 27;
             this.btnbloqer.Text = "&Bloquer";
             this.btnbloqer.UseVisualStyleBackColor = true;
+            this.btnbloqer.Click += new System.EventHandler(this.btnbloqer_Click_1);
             // 
             // btnDebloquer
             // 
@@ -223,6 +226,7 @@
             this.btnDebloquer.TabIndex = 28;
             this.btnDebloquer.Text = "&Debloquer";
             this.btnDebloquer.UseVisualStyleBackColor = true;
+            this.btnDebloquer.Click += new System.EventHandler(this.btnDebloquer_Click_1);
             // 
             // btnReset
             // 
@@ -232,12 +236,13 @@
             this.btnReset.TabIndex = 29;
             this.btnReset.Text = "&Reinitialiser";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 553);
+            this.ClientSize = new System.Drawing.Size(946, 553);
             this.ControlBox = false;
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDebloquer);
