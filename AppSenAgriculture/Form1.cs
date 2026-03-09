@@ -1,5 +1,6 @@
 ﻿using AppSenAgriculture.Helper;
 using AppSenAgriculture.Models;
+using AppSenAgriculture.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,12 @@ namespace AppSenAgriculture
             txtMotDePasse.PasswordChar = '●';
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtMotDePasse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdentifiant_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -43,28 +49,26 @@ namespace AppSenAgriculture
                 var leUser = db.Utilisateurs.Where(a => a.IdentifiantUtilisateur.ToLower() == txtIdentifiant.Text.ToLower()).FirstOrDefault();
                 if (leUser != null)
                 {
-
-                    using (MD5 md5Hash = MD5.Create())
+                    MessageBox.Show($"Utilisateur trouvé: {leUser.IdentifiantUtilisateur}\nMot de passe saisi: {txtMotDePasse.Text}\nHash stocké: {leUser.MotDePasseUtilisateur}\nProfil test...");
+                    // Utiliser PasswordSecurity pour la vérification SHA256
+                    if (PasswordSecurity.VerifyPassword(txtMotDePasse.Text, leUser.MotDePasseUtilisateur))
                     {
-                        if (Crypto.VerifyMd5Hash(md5Hash, txtMotDePasse.Text, leUser.MotDePasseUtilisateur))
+                        frmMDI f = new frmMDI();
+                        //if (db.Admins.Find(leUser.IdUtilisateur) != null)
+                        if (db.Admins.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
                         {
-                            frmMDI f = new frmMDI();
-                            //if (db.Admins.Find(leUser.IdUtilisateur) != null)
-                            if (db.Admins.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
-                            {
-                                f.profil = "Admin";
-                            }
-                            else if (db.Clients.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
-                            {
-                                f.profil = "Client";
-                            }
-                            f.Show();
-                            this.Hide();
+                            f.profil = "Admin";
                         }
-                        else
+                        else if (db.Clients.Where(a => a.IdUtilisateur == leUser.IdUtilisateur).FirstOrDefault() != null)
                         {
-                            MessageBox.Show("Identifiant ou Mot de pass incorrect");
+                            f.profil = "Client";
                         }
+                        f.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Identifiant ou Mot de pass incorrect");
                     }
                 }
                 else
@@ -76,7 +80,6 @@ namespace AppSenAgriculture
             catch(Exception ex)
             {
                 Utils.WriteLogSystem(ex.ToString(), "Form1-btnSeConnecter_Click");
-
             }
             
 

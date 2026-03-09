@@ -28,7 +28,8 @@ namespace AppSenAgriculture.Security
 
             if (storedPassword.StartsWith(PasswordPrefix, StringComparison.Ordinal))
             {
-                return string.Equals(HashPassword(inputPassword), storedPassword, StringComparison.Ordinal);
+                string inputHash = HashPassword(inputPassword);
+                return string.Equals(inputHash, storedPassword, StringComparison.Ordinal);
             }
 
             // Backward compatibility for legacy clear-text values.
