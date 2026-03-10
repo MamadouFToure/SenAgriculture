@@ -55,10 +55,13 @@ namespace AppSenAgriculture.Views.Account
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Client ut = new Client();
-            
+
             // Générer un mot de passe temporaire sécurisé
             string tempPassword = PasswordSecurity.GenerateTemporaryPassword();
-            ut.MotDePasseUtilisateur = PasswordSecurity.HashPassword(tempPassword);
+            using (MD5 md5Hash = MD5.Create())
+            {
+                ut.MotDePasseUtilisateur = Crypto.GetMd5Hash(md5Hash, tempPassword);
+            }
 
             ut.AdresseUtilisateur= txtAdresse.Text;
             ut.EmailUtilisateur = txtEmail.Text;
