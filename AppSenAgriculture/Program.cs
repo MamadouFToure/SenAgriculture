@@ -1,9 +1,10 @@
-﻿using AppSenAgriculture.Helper;
+// Appli WinForms : connexion (frmConnexion) puis menu principal (FrmMDI). Comptes : Client, Facilitateur, Agriculteur. Paramètres : Lieu, Facture, Catégorie, Produit.
+using AppSenAgriculture.Helper;
 using AppSenAgriculture.Models;
+using AppSenAgriculture.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,10 +38,7 @@ namespace AppSenAgriculture
                 a.AdresseUtilisateur = "Admin";
                 a.EmailUtilisateur = "Admin@gmail.com";
                 a.TelUtilisateur = "771234567";
-                using (MD5 md5Hash = MD5.Create())
-                {
-                    a.MotDePasseUtilisateur = Crypto.GetMd5Hash(md5Hash, "P@sser123");
-                }
+                a.MotDePasseUtilisateur = PasswordSecurity.HashPassword("P@sser123");
                 a.NomCompletUtilisateur = "Admin";
                 db.Admins.Add(a);
                 db.SaveChanges();
