@@ -1,4 +1,5 @@
-﻿using AppSenAgriculture.Helper;
+// Appli WinForms : connexion (frmConnexion) puis menu principal (FrmMDI). Comptes : Client, Facilitateur, Agriculteur. Paramètres : Lieu, Facture, Catégorie, Produit.
+using AppSenAgriculture.Helper;
 using AppSenAgriculture.Models;
 using AppSenAgriculture.Security;
 using System;

@@ -22,6 +22,7 @@ namespace AppSenAgriculture.Models
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Cultivateur> Cultivateurs { get; set; }
         public DbSet<Facilitateur> Facilitateurs { get; set; }
+        public DbSet<Agriculteur> Agriculteurs { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Commande> Commandes { get; set; }

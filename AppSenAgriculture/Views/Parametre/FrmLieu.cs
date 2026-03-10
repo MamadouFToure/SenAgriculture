@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AppSenAgriculture.Views.Parametre
 {
+    // Formulaire de gestion des lieux
     public partial class FrmLieu : Form
     {
-        // Contexte de la base de donnee
         BdSenAgricultureContext db = new BdSenAgricultureContext();
 
         public FrmLieu()
@@ -21,19 +21,16 @@ namespace AppSenAgriculture.Views.Parametre
             InitializeComponent();
         }
 
-        // Au chargement du formulaire 
         private void FrmLieu_Load(object sender, EventArgs e)
         {
             ChargerLieux();
         }
 
-        // Charge les lieux 
         private void ChargerLieux()
         {
             dgLieux.DataSource = db.Lieux.ToList();
         }
 
-        // Vide les champs 
         private void EffacerChamps()
         {
             txtNom.Clear();
@@ -42,7 +39,6 @@ namespace AppSenAgriculture.Views.Parametre
             txtNom.Focus();
         }
 
-        // Ajoute 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Lieu lieu = new Lieu()
@@ -56,7 +52,6 @@ namespace AppSenAgriculture.Views.Parametre
             EffacerChamps();
         }
 
-        // Modifie 
         private void btnModifier_Click(object sender, EventArgs e)
         {
             if (dgLieux.CurrentRow == null) return;
@@ -73,7 +68,6 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
-        // Supprime 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             if (dgLieux.CurrentRow == null) return;
