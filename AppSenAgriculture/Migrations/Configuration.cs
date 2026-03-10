@@ -10,7 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
+           AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(AppSenAgriculture.Models.BdSenAgricultureContext context)
