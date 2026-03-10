@@ -109,5 +109,14 @@ namespace AppSenAgriculture
             f.WindowState = FormWindowState.Maximized;
 
         }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmStock f = new frmStock();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
     }
 }
