@@ -141,6 +141,7 @@
     <Compile Include="Helper\FillList.cs" />
     <Compile Include="Helper\GMailer.cs" />
     <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Models\Lieu.cs" />
     <Compile Include="Models\Td_Erreur.cs" />
     <Compile Include="Security\PasswordSecurity.cs" />
     <Compile Include="Migrations\202603081751493_InitialCreate.cs" />
@@ -170,11 +171,23 @@
     <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Account\frmAgriculteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Account\frmAgriculteur.Designer.cs">
+      <DependentUpon>frmAgriculteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Account\frmClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Account\frmClient.Designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\frmFacilitateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Account\frmFacilitateur.Designer.cs">
+      <DependentUpon>frmFacilitateur.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Parametre\frmCategorie.cs">
       <SubType>Form</SubType>
@@ -185,8 +198,20 @@
     <Compile Include="Views\Parametre\FrmLieu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Parametre\frmFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmFacture.Designer.cs">
+      <DependentUpon>frmFacture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Parametre\FrmLieu.Designer.cs">
       <DependentUpon>FrmLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmDepartement.Designer.cs">
+      <DependentUpon>frmDepartement.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Parametre\frmProduit.cs">
       <SubType>Form</SubType>
@@ -199,6 +224,11 @@
     </Compile>
     <Compile Include="Views\Parametre\frmStock.Designer.cs">
       <DependentUpon>frmStock.cs</DependentUpon>
+    <Compile Include="Views\Parametre\frmRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmRegion.Designer.cs">
+      <DependentUpon>frmRegion.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -218,20 +248,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Account\frmAgriculteur.resx">
+      <DependentUpon>frmAgriculteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Account\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Account\frmFacilitateur.resx">
+      <DependentUpon>frmFacilitateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmCategorie.resx">
       <DependentUpon>frmCategorie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmFacture.resx">
+      <DependentUpon>frmFacture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\FrmLieu.resx">
       <DependentUpon>FrmLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmDepartement.resx">
+      <DependentUpon>frmDepartement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmProduit.resx">
       <DependentUpon>frmProduit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmStock.resx">
       <DependentUpon>frmStock.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Parametre\frmRegion.resx">
+      <DependentUpon>frmRegion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

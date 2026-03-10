@@ -114,6 +114,30 @@ namespace AppSenAgriculture
         {
             fermer();
             frmStock f = new frmStock();
+        private void regionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmRegion f = new frmRegion();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void lieuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            FrmLieu f = new FrmLieu();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void departementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmDepartement f = new frmDepartement();
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;
