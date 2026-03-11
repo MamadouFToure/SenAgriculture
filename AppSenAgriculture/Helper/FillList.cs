@@ -63,30 +63,5 @@ namespace AppSenAgriculture.Helper
             }
             return laListe;
         }
-
-        /// <summary>
-        /// chargement sur une liste des produits
-        /// </summary>
-        /// <returns></returns>
-        public List<ListItem> fillProduit()
-        {
-            List<ListItem> laListe = new List<ListItem>();
-            var liste = db.Produits.ToList();
-            laListe.Add(new ListItem
-            {
-                Value = null,
-                Text = "Selectionner....."
-            });
-            foreach (var t in liste)
-            {
-                var item = new ListItem
-                {
-                    Value = t.IdProduit.ToString(),
-                    Text = t.LibelleProduit.ToString()
-                };
-                laListe.Add(item);
-            }
-            return laListe;
-        }
     }
 }

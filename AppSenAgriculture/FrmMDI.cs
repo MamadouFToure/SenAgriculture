@@ -110,10 +110,6 @@ namespace AppSenAgriculture
 
         }
 
-        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fermer();
-            frmStock f = new frmStock();
         private void regionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
