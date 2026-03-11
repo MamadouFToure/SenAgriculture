@@ -12,19 +12,11 @@ namespace AppSenAgriculture.Helper
     {
         BdSenAgricultureContext db = new BdSenAgricultureContext();
 
-        /// <summary>
-        /// chargement sur une liste des unites de mesure
-        /// </summary>
-        /// <returns></returns>
         public List<ListItem> fillUniteMesure()
         {
             List<ListItem> laListe = new List<ListItem>();
             var liste = db.UnitesMesures.ToList();
-            laListe.Add(new ListItem 
-            { 
-                Value =  null,
-                Text = "Selectionner....." 
-            });
+            laListe.Add(new ListItem { Value = null, Text = "Selectionner....." });
             foreach (var t in liste)
             {
                 var item = new ListItem
@@ -37,21 +29,11 @@ namespace AppSenAgriculture.Helper
             return laListe;
         }
 
-
-        /// <summary>
-        /// chargement sur une liste des categories de produit
-        /// </summary>
-        /// <returns></returns>
-
         public List<ListItem> fillCategorie()
         {
             List<ListItem> laListe = new List<ListItem>();
             var liste = db.Categories.ToList();
-            laListe.Add(new ListItem
-            {
-                Value = null,
-                Text = "Selectionner....."
-            });
+            laListe.Add(new ListItem { Value = null, Text = "Selectionner....." });
             foreach (var t in liste)
             {
                 var item = new ListItem
@@ -63,9 +45,8 @@ namespace AppSenAgriculture.Helper
             }
             return laListe;
         }
-    
 
-    public List<ListItem> fillClient()
+        public List<ListItem> fillClient()
         {
             List<ListItem> laListe = new List<ListItem>();
             var liste = db.Clients.ToList();
@@ -97,11 +78,6 @@ namespace AppSenAgriculture.Helper
             return laListe;
         }
 
-
-        /// <summary>
-        /// chargement sur une liste des produits
-        /// </summary>
-        /// <returns></returns>
         public List<ListItem> fillProduit()
         {
             List<ListItem> laListe = new List<ListItem>();
@@ -114,19 +90,6 @@ namespace AppSenAgriculture.Helper
                     Value = t.IdProduit.ToString(),
                     Text = t.LibelleProduit.ToString()
                 });
-            laListe.Add(new ListItem
-            {
-                Value = null,
-                Text = "Selectionner....."
-            });
-            foreach (var t in liste)
-            {
-                var item = new ListItem
-                {
-                    Value = t.IdProduit.ToString(),
-                    Text = t.LibelleProduit.ToString()
-                };
-                laListe.Add(item);
             }
             return laListe;
         }
