@@ -219,11 +219,6 @@
     <Compile Include="Views\Parametre\frmProduit.Designer.cs">
       <DependentUpon>frmProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Parametre\frmStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Parametre\frmStock.Designer.cs">
-      <DependentUpon>frmStock.cs</DependentUpon>
     <Compile Include="Views\Parametre\frmRegion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,8 +267,6 @@
     <EmbeddedResource Include="Views\Parametre\frmProduit.resx">
       <DependentUpon>frmProduit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Parametre\frmStock.resx">
-      <DependentUpon>frmStock.cs</DependentUpon>
     <EmbeddedResource Include="Views\Parametre\frmRegion.resx">
       <DependentUpon>frmRegion.cs</DependentUpon>
     </EmbeddedResource>
