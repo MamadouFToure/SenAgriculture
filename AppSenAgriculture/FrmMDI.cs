@@ -112,21 +112,22 @@ namespace AppSenAgriculture
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fermer();
-            frmStock f = new frmStock();
-            f.MdiParent = this;
-            f.Show();
-            f.WindowState = FormWindowState.Maximized;
+            // fermer();
+            // frmStock f = new frmStock();
+            // f.MdiParent = this;
+            // f.Show();
+            // f.WindowState = FormWindowState.Maximized;
+            MessageBox.Show("Le formulaire Stock n'est pas disponible.");
         }
 
         private void regionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fermer();
-            frmRegion f = new frmRegion();
-            f.MdiParent = this;
-            f.Show();
-            f.WindowState = FormWindowState.Maximized;
-
+            // fermer();
+            // frmRegion f = new frmRegion();
+            // f.MdiParent = this;
+            // f.Show();
+            // f.WindowState = FormWindowState.Maximized;
+            MessageBox.Show("Le formulaire Région n'est pas disponible.");
         }
 
         private void lieuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,11 +142,12 @@ namespace AppSenAgriculture
 
         private void departementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fermer();
-            frmDepartement f = new frmDepartement();
-            f.MdiParent = this;
-            f.Show();
-            f.WindowState = FormWindowState.Maximized;
+            // fermer();
+            // frmDepartement f = new frmDepartement();
+            // f.MdiParent = this;
+            // f.Show();
+            // f.WindowState = FormWindowState.Maximized;
+            MessageBox.Show("Le formulaire Département n'est pas disponible.");
         }
 
         private void facilitateurToolStripMenuItem_Click(object sender, EventArgs e)
