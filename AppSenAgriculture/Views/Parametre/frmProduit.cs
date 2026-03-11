@@ -38,7 +38,7 @@ namespace AppSenAgriculture.Views.Parametre
                 u.DescriptionProduit,
                 u.PrixUnuitaireMin,
                 u.PrixUnuitaireMax,
-                Categorie = u.Categorie.DescriptionCategorie,
+                Categorie = u.Categorie.LibelleCategorie,
                 UniteMesure = u.UniteMesure.LibelleUnite
             }).ToList();
 
@@ -78,8 +78,8 @@ namespace AppSenAgriculture.Views.Parametre
             txtLibelle.Text = p.LibelleProduit;
             txtPrixUMax.Text = p.PrixUnuitaireMax.ToString();
             txtPrixUMin.Text = p.PrixUnuitaireMin.ToString();
-            cbbCategorie.SelectedIndex = p.CategorieId;
-            cbbUniteMesure.SelectedIndex = p.IdUniteMesure;
+            cbbCategorie.SelectedValue = p.CategorieId;
+            cbbUniteMesure.SelectedValue = p.IdUniteMesure;
         }
 
         private void btnModifier_Click(object sender, EventArgs e)

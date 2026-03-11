@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace AppSenAgriculture
 {
@@ -18,6 +19,8 @@ namespace AppSenAgriculture
         [STAThread]
         static void Main()
         {
+            // Program.cs (avant d'utiliser le contexte)
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BdSenAgricultureContext, AppSenAgriculture.Migrations.Configuration>());
             CreateAdmin();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -43,7 +46,7 @@ namespace AppSenAgriculture
                 db.Admins.Add(a);
                 db.SaveChanges();
             }
-                    
+
         }
     }
 }

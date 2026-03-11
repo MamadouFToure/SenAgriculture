@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security; // Ajout de cette directive using
 
 namespace AppSenAgriculture.Helper
 {
@@ -66,10 +67,47 @@ namespace AppSenAgriculture.Helper
         /// <param name="libelle"></param>
         public static void WriteLogSystem(string erreur, string libelle)
         {
-            using (EventLog eventLog = new EventLog("Application"))
+            const string source = "SenAgriculture";
+            const string logName = "Application";
+            string message = $"date: {DateTime.Now}, libelle: {libelle}, description {erreur}";
+
+            try
             {
-                eventLog.Source = "SenAgriculture";
-                eventLog.WriteEntry(string.Format("date: {0}, libelle: {1}, description {2}", DateTime.Now, libelle, erreur), EventLogEntryType.Information, 101, 1);
+                try
+                {
+                    // Tentative prudente de créer la source si elle n'existe pas.
+                    if (!EventLog.SourceExists(source))
+                    {
+                        var data = new EventSourceCreationData(source, logName);
+                        EventLog.CreateEventSource(data); // nécessite privilèges administrateur
+                    }
+                }
+                catch (SecurityException) { /* permissions insuffisantes -> fallback */ }
+                catch (UnauthorizedAccessException) { /* idem -> fallback */ }
+                catch (Exception) { /* autre échec -> fallback */ }
+
+                // Si la source existe, écrire dans l'EventLog
+                if (EventLog.SourceExists(source))
+                {
+                    EventLog.WriteEntry(source, message, EventLogEntryType.Information, 101, 1);
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // Si quelque chose de non prévu échoue, on passe au fallback
+            }
+
+            // Fallback : écrire dans un fichier local fiable
+            try
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Error", "event_fallback.txt");
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+                File.AppendAllText(path, message + Environment.NewLine + new string('-', 80) + Environment.NewLine);
+            }
+            catch
+            {
+                // Rien de plus à faire : éviter de lancer une exception depuis le logger
             }
         }
 

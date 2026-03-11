@@ -51,29 +51,29 @@ namespace AppSenAgriculture.Views.Account
         {
 
         }
-      
+
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Client ut = new Client();
-            
+
             // Générer un mot de passe temporaire sécurisé
             string tempPassword = PasswordSecurity.GenerateTemporaryPassword();
+
+            // Hashage avec le même système que Admin
             ut.MotDePasseUtilisateur = PasswordSecurity.HashPassword(tempPassword);
 
-            ut.AdresseUtilisateur= txtAdresse.Text;
+            ut.AdresseUtilisateur = txtAdresse.Text;
             ut.EmailUtilisateur = txtEmail.Text;
             ut.TelUtilisateur = txtTelephone.Text;
             ut.IdentifiantUtilisateur = txtIdentifiant.Text;
-            ut.NomCompletUtilisateur=txtNomComplet.Text;
+            ut.NomCompletUtilisateur = txtNomComplet.Text;
             ut.ProfessionClient = textProfession.Text;
+
             db.Clients.Add(ut);
             db.SaveChanges();
-            
+
             MessageBox.Show($"Client ajouté avec succès!\nMot de passe temporaire: {tempPassword}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ResetForm(); 
-
-
-
+            ResetForm();
         }
 
         Client clientSelectionne;
