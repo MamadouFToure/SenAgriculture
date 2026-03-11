@@ -63,6 +63,40 @@ namespace AppSenAgriculture.Helper
             }
             return laListe;
         }
+    
+
+    public List<ListItem> fillClient()
+        {
+            List<ListItem> laListe = new List<ListItem>();
+            var liste = db.Clients.ToList();
+            laListe.Add(new ListItem { Value = null, Text = "Selectionner....." });
+            foreach (var t in liste)
+            {
+                laListe.Add(new ListItem
+                {
+                    Value = t.IdUtilisateur.ToString(),
+                    Text = t.NomCompletUtilisateur.ToString()
+                });
+            }
+            return laListe;
+        }
+
+        public List<ListItem> fillCommande()
+        {
+            List<ListItem> laListe = new List<ListItem>();
+            var liste = db.Commandes.ToList();
+            laListe.Add(new ListItem { Value = null, Text = "Selectionner....." });
+            foreach (var t in liste)
+            {
+                laListe.Add(new ListItem
+                {
+                    Value = t.IdCommande.ToString(),
+                    Text = t.NumeroCommande.ToString()
+                });
+            }
+            return laListe;
+        }
+
 
         /// <summary>
         /// chargement sur une liste des produits
@@ -72,6 +106,14 @@ namespace AppSenAgriculture.Helper
         {
             List<ListItem> laListe = new List<ListItem>();
             var liste = db.Produits.ToList();
+            laListe.Add(new ListItem { Value = null, Text = "Selectionner....." });
+            foreach (var t in liste)
+            {
+                laListe.Add(new ListItem
+                {
+                    Value = t.IdProduit.ToString(),
+                    Text = t.LibelleProduit.ToString()
+                });
             laListe.Add(new ListItem
             {
                 Value = null,
