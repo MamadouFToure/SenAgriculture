@@ -40,6 +40,7 @@
             this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facilitateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,7 +131,8 @@
             // securiteToolStripMenuItem
             // 
             this.securiteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientToolStripMenuItem});
+            this.clientToolStripMenuItem,
+            this.facilitateurToolStripMenuItem});
             this.securiteToolStripMenuItem.Name = "securiteToolStripMenuItem";
             this.securiteToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.securiteToolStripMenuItem.Text = "&Securite";
@@ -141,6 +143,13 @@
             this.clientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientToolStripMenuItem.Text = "&Client";
             this.clientToolStripMenuItem.Click += new System.EventHandler(this.clientToolStripMenuItem_Click);
+            // 
+            // facilitateurToolStripMenuItem
+            // 
+            this.facilitateurToolStripMenuItem.Name = "facilitateurToolStripMenuItem";
+            this.facilitateurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facilitateurToolStripMenuItem.Text = "&Facilitateur";
+            this.facilitateurToolStripMenuItem.Click += new System.EventHandler(this.facilitateurToolStripMenuItem_Click);
             // 
             // frmMDI
             // 
@@ -176,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facilitateurToolStripMenuItem;
     }
 }
