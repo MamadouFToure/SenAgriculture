@@ -190,8 +190,9 @@
     <Compile Include="Views\Commande\frmCommande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Commande\frmCommande.Designer.cs">
+<Compile Include="Views\Commande\frmCommande.Designer.cs">
       <DependentUpon>frmCommande.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Account\frmFacilitateur.cs">
       <SubType>Form</SubType>
     </Compile>
