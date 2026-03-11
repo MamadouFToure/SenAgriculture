@@ -19,6 +19,7 @@ namespace AppSenAgriculture.Views.Account
 
         private void frmAgriculteur_Load(object sender, EventArgs e)
         {
+            ChargerRegions();
             ChargerAgriculteurs();
         }
 
@@ -35,6 +36,23 @@ namespace AppSenAgriculture.Views.Account
             }).ToList();
         }
 
+        private void ChargerRegions()
+        {
+            var regions = db.Regions.OrderBy(r => r.NomRegion).ToList();
+            cbRegion.Items.Clear();
+            foreach (var r in regions)
+            {
+                cbRegion.Items.Add(r.NomRegion);
+            }
+
+            var departements = db.Departements.OrderBy(d => d.Nom).ToList();
+            cbDepartement.Items.Clear();
+            foreach (var d in departements)
+            {
+                cbDepartement.Items.Add(d.Nom);
+            }
+        }
+
         private void EffacerChamps()
         {
             txtNomComplet.Clear();
@@ -46,8 +64,8 @@ namespace AppSenAgriculture.Views.Account
             txtLocalisation.Clear();
             txtSuperficie.Clear();
             txtType.Clear();
-            txtRegion.Clear();
-            txtDepartement.Clear();
+            cbRegion.SelectedIndex = -1;
+            cbDepartement.SelectedIndex = -1;
             txtCommune.Clear();
             txtVilleVillage.Clear();
             agriculteurSelectionne = null;
@@ -78,8 +96,8 @@ namespace AppSenAgriculture.Views.Account
             double.TryParse(txtSuperficie.Text, out double sup);
             a.SuperficieAgriculteur = sup;
             a.TypeAgriculteur = txtType.Text;
-            a.RegionAgriculteur = txtRegion.Text;
-            a.DepartementAgriculteur = txtDepartement.Text;
+            a.RegionAgriculteur = cbRegion.SelectedItem != null ? cbRegion.SelectedItem.ToString() : string.Empty;
+            a.DepartementAgriculteur = cbDepartement.SelectedItem != null ? cbDepartement.SelectedItem.ToString() : string.Empty;
             a.CommuneAgriculteur = txtCommune.Text;
             a.VilleVillageAgriculteur = txtVilleVillage.Text;
 
@@ -114,8 +132,8 @@ namespace AppSenAgriculture.Views.Account
                 txtLocalisation.Text = agriculteurSelectionne.LocalisationAgriculteur;
                 txtSuperficie.Text = agriculteurSelectionne.SuperficieAgriculteur.ToString();
                 txtType.Text = agriculteurSelectionne.TypeAgriculteur;
-                txtRegion.Text = agriculteurSelectionne.RegionAgriculteur;
-                txtDepartement.Text = agriculteurSelectionne.DepartementAgriculteur;
+                cbRegion.Text = agriculteurSelectionne.RegionAgriculteur;
+                cbDepartement.Text = agriculteurSelectionne.DepartementAgriculteur;
                 txtCommune.Text = agriculteurSelectionne.CommuneAgriculteur;
                 txtVilleVillage.Text = agriculteurSelectionne.VilleVillageAgriculteur;
             }
@@ -147,8 +165,8 @@ namespace AppSenAgriculture.Views.Account
             double.TryParse(txtSuperficie.Text, out double sup);
             agriculteurSelectionne.SuperficieAgriculteur = sup;
             agriculteurSelectionne.TypeAgriculteur = txtType.Text;
-            agriculteurSelectionne.RegionAgriculteur = txtRegion.Text;
-            agriculteurSelectionne.DepartementAgriculteur = txtDepartement.Text;
+            agriculteurSelectionne.RegionAgriculteur = cbRegion.SelectedItem != null ? cbRegion.SelectedItem.ToString() : string.Empty;
+            agriculteurSelectionne.DepartementAgriculteur = cbDepartement.SelectedItem != null ? cbDepartement.SelectedItem.ToString() : string.Empty;
             agriculteurSelectionne.CommuneAgriculteur = txtCommune.Text;
             agriculteurSelectionne.VilleVillageAgriculteur = txtVilleVillage.Text;
 
