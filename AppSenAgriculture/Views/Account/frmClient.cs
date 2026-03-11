@@ -72,8 +72,36 @@ namespace AppSenAgriculture.Views.Account
             db.Clients.Add(ut);
             db.SaveChanges();
 
-            MessageBox.Show($"Client ajouté avec succès!\nMot de passe temporaire: {tempPassword}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Afficher le message avec bouton Copier
+            AfficherMessageMotDePasse(tempPassword, txtNomComplet.Text, txtIdentifiant.Text);
             ResetForm();
+        }
+
+        private void AfficherMessageMotDePasse(string motDePasse, string nomClient, string identifiant)
+        {
+            string message = $"✅ Client ajouté avec succès!\n\n" +
+                           $"👤 Nom: {nomClient}\n" +
+                           $"🔑 Identifiant: {identifiant}\n" +
+                           $"🔒 Mot de passe temporaire: {motDePasse}\n\n" +
+                           $"⚠️  Veuillez noter ce mot de passe!\n" +
+                           $"Le client devra le changer lors de la première connexion.";
+
+            DialogResult result = MessageBox.Show(
+                message + "\n\n" + "📋 Voulez-vous copier le mot de passe dans le presse-papiers?",
+                "Succès - Client Créé",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                Clipboard.SetText(motDePasse);
+                MessageBox.Show("✅ Mot de passe copié dans le presse-papiers!\n\n" +
+                              $"Mot de passe: {motDePasse}\n\n" +
+                              "Vous pouvez maintenant le coller (Ctrl+V) où vous voulez.",
+                              "Copie Réussie",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Information);
+            }
         }
 
         Client clientSelectionne;
