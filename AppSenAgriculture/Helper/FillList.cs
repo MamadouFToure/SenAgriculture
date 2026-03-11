@@ -57,7 +57,7 @@ namespace AppSenAgriculture.Helper
                 var item = new ListItem
                 {
                     Value = t.IdCategorie.ToString(),
-                    Text = t.DescriptionCategorie.ToString()
+                    Text = t.LibelleCategorie.ToString()
                 };
                 laListe.Add(item);
             }

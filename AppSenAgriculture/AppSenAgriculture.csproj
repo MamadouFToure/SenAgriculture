@@ -144,10 +144,6 @@
     <Compile Include="Models\Lieu.cs" />
     <Compile Include="Models\Td_Erreur.cs" />
     <Compile Include="Security\PasswordSecurity.cs" />
-    <Compile Include="Migrations\202603081751493_InitialCreate.cs" />
-    <Compile Include="Migrations\202603081751493_InitialCreate.Designer.cs">
-      <DependentUpon>202603081751493_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Agriculteur.cs" />
@@ -224,6 +220,7 @@
     </Compile>
     <Compile Include="Views\Parametre\frmStock.Designer.cs">
       <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Parametre\frmRegion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,9 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMDI.resx">
       <DependentUpon>FrmMDI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202603081751493_InitialCreate.resx">
-      <DependentUpon>202603081751493_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -274,6 +268,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmStock.resx">
       <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmRegion.resx">
       <DependentUpon>frmRegion.cs</DependentUpon>
     </EmbeddedResource>

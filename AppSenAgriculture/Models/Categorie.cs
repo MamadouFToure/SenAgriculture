@@ -9,13 +9,13 @@ namespace AppSenAgriculture.Models
 {
     public class Categorie
     {
-        [Key] public int Id { get; set; }
+        [Key] 
         public int IdCategorie { get; set; }
 
         [Required, MaxLength(100)]
         public string LibelleCategorie { get; set; }
 
-        [Required, MaxLength(2000)]
+        [MaxLength(2000)]
         public string DescriptionCategorie { get; set; }
 
         //une categorie peut avoir plusieurs produits
