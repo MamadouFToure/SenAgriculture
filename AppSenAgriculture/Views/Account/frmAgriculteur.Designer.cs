@@ -34,9 +34,9 @@ namespace AppSenAgriculture.Views.Account
             this.lblType = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.TextBox();
             this.lblRegion = new System.Windows.Forms.Label();
-            this.txtRegion = new System.Windows.Forms.TextBox();
+            this.cbRegion = new System.Windows.Forms.ComboBox();
             this.lblDepartement = new System.Windows.Forms.Label();
-            this.txtDepartement = new System.Windows.Forms.TextBox();
+            this.cbDepartement = new System.Windows.Forms.ComboBox();
             this.lblCommune = new System.Windows.Forms.Label();
             this.txtCommune = new System.Windows.Forms.TextBox();
             this.lblVilleVillage = new System.Windows.Forms.Label();
@@ -211,13 +211,14 @@ namespace AppSenAgriculture.Views.Account
             this.lblRegion.TabIndex = 18;
             this.lblRegion.Text = "Région";
             //
-            // txtRegion
+            // cbRegion
             //
-            this.txtRegion.Location = new System.Drawing.Point(268, 70);
-            this.txtRegion.MaxLength = 80;
-            this.txtRegion.Name = "txtRegion";
-            this.txtRegion.Size = new System.Drawing.Size(200, 20);
-            this.txtRegion.TabIndex = 19;
+            this.cbRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegion.FormattingEnabled = true;
+            this.cbRegion.Location = new System.Drawing.Point(268, 70);
+            this.cbRegion.Name = "cbRegion";
+            this.cbRegion.Size = new System.Drawing.Size(200, 21);
+            this.cbRegion.TabIndex = 19;
             //
             // lblDepartement
             //
@@ -228,13 +229,14 @@ namespace AppSenAgriculture.Views.Account
             this.lblDepartement.TabIndex = 20;
             this.lblDepartement.Text = "Département";
             //
-            // txtDepartement
+            // cbDepartement
             //
-            this.txtDepartement.Location = new System.Drawing.Point(268, 112);
-            this.txtDepartement.MaxLength = 80;
-            this.txtDepartement.Name = "txtDepartement";
-            this.txtDepartement.Size = new System.Drawing.Size(200, 20);
-            this.txtDepartement.TabIndex = 21;
+            this.cbDepartement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDepartement.FormattingEnabled = true;
+            this.cbDepartement.Location = new System.Drawing.Point(268, 112);
+            this.cbDepartement.Name = "cbDepartement";
+            this.cbDepartement.Size = new System.Drawing.Size(200, 21);
+            this.cbDepartement.TabIndex = 21;
             //
             // lblCommune
             //
@@ -349,9 +351,9 @@ namespace AppSenAgriculture.Views.Account
             this.Controls.Add(this.lblVilleVillage);
             this.Controls.Add(this.txtCommune);
             this.Controls.Add(this.lblCommune);
-            this.Controls.Add(this.txtDepartement);
+            this.Controls.Add(this.cbDepartement);
             this.Controls.Add(this.lblDepartement);
-            this.Controls.Add(this.txtRegion);
+            this.Controls.Add(this.cbRegion);
             this.Controls.Add(this.lblRegion);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.lblType);
@@ -400,9 +402,9 @@ namespace AppSenAgriculture.Views.Account
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Label lblRegion;
-        private System.Windows.Forms.TextBox txtRegion;
+        private System.Windows.Forms.ComboBox cbRegion;
         private System.Windows.Forms.Label lblDepartement;
-        private System.Windows.Forms.TextBox txtDepartement;
+        private System.Windows.Forms.ComboBox cbDepartement;
         private System.Windows.Forms.Label lblCommune;
         private System.Windows.Forms.TextBox txtCommune;
         private System.Windows.Forms.Label lblVilleVillage;

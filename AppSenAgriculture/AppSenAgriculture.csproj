@@ -161,6 +161,7 @@
     <Compile Include="Models\Facilitateur.cs" />
     <Compile Include="Models\Facture.cs" />
     <Compile Include="Models\ListItem.cs" />
+    <Compile Include="Models\Lieu.cs" />
     <Compile Include="Models\MoyenDePayements.cs" />
     <Compile Include="Models\Produit.cs" />
     <Compile Include="Models\Region.cs" />
