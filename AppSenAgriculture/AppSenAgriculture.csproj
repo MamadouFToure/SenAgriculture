@@ -141,7 +141,6 @@
     <Compile Include="Helper\FillList.cs" />
     <Compile Include="Helper\GMailer.cs" />
     <Compile Include="Helper\Utils.cs" />
-    <Compile Include="Models\Lieu.cs" />
     <Compile Include="Models\Td_Erreur.cs" />
     <Compile Include="Security\PasswordSecurity.cs" />
     <Compile Include="Migrations\202603081751493_InitialCreate.cs" />
@@ -207,23 +206,11 @@
     <Compile Include="Views\Parametre\FrmLieu.Designer.cs">
       <DependentUpon>FrmLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Parametre\frmDepartement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Parametre\frmDepartement.Designer.cs">
-      <DependentUpon>frmDepartement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Parametre\frmProduit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Parametre\frmProduit.Designer.cs">
       <DependentUpon>frmProduit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Parametre\frmRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Parametre\frmRegion.Designer.cs">
-      <DependentUpon>frmRegion.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -261,14 +248,8 @@
     <EmbeddedResource Include="Views\Parametre\FrmLieu.resx">
       <DependentUpon>FrmLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Parametre\frmDepartement.resx">
-      <DependentUpon>frmDepartement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmProduit.resx">
       <DependentUpon>frmProduit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Parametre\frmRegion.resx">
-      <DependentUpon>frmRegion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
